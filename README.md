@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/levon-avackimyanc/Lab-01-JSONparser.svg?branch=wp%2Flab)](https://travis-ci.org/levon-avackimyanc/Lab-01-JSONparser)
+
 
 # Лабораторная работа № 1
 
