@@ -15,10 +15,10 @@ class Student {
  public:
   Student();
   explicit Student(const json &j);
-  const std::string &getName();
-  const std::any &getGroup();
+  const std::string &getName() const;
+  const std::any &getGroup() const;
   double getAvg() const;
-  const std::any &getDebt();
+  const std::any &getDebt() const;
   ~Student();
 
  private:

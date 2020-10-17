@@ -30,8 +30,8 @@ Student::Student(const json &j) {
   }
   Debt = std::any{j.at("debt")};
 }
-const std::string &Student::getName() { return this->Name; }
+const std::string &Student::getName() const { return this->Name; }
 double Student::getAvg() const { return this->Avg; }
-const std::any &Student::getDebt() { return this->Debt; }
-const std::any &Student::getGroup() { return this->Group; }
+const std::any &Student::getDebt() const { return this->Debt; }
+const std::any &Student::getGroup() const { return this->Group; }
 Student::~Student() = default;
