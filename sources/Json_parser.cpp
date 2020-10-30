@@ -57,12 +57,12 @@ std::ostream& operator<<(std::ostream& out, const Json_parser& J) {
   for (size_t i = 0; i < 4; ++i) {
     out << std::setfill('-') << std::setw(length_of_fields[i]) << '|';
   }
-  size_t Size = 0;
+  /*size_t Size = 0;
   for (auto i : J.students) {
     if (i.getName().length() > Size) {
       Size = i.getName().length();
     }
-  }
+  }*/
   out << std::setfill(' ') << '|' << std::endl;
   for (size_t i = 0; i < J.students.size(); ++i) {
     out << std::left << std::setw(length_of_fields[0])
