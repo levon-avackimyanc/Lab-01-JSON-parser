@@ -16,11 +16,13 @@
 using nlohmann::json;
 
 class Json_parser {
- public:
-  explicit Json_parser(const std::string& Json_path);
-  friend std::ostream& operator<<(std::ostream& out, const Json_parser& j);
+public:
+    explicit Json_parser(const std::string &Json_path);
 
- private:
-  std::vector<Student> students;
+    friend std::ostream &operator<<(std::ostream &out, const Json_parser &j);
+
+private:
+    std::vector<Student> students;
 };
+
 #endif  // INCLUDE_JSON_PARSER_HPP_"
