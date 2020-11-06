@@ -101,6 +101,18 @@ TEST(Json_parser, correct_student_values) {
     ASSERT_EQ(std::any_cast<json>(S2.getGroup()).get<std::string>(), "IU8-31");
     ASSERT_TRUE(std::any_cast<json>(S2.getDebt()).is_array());
     ASSERT_DOUBLE_EQ(S2.getAvg(), 3.33);
+    Student S3(json::parse(R"(
+    {
+      "name": "Ivanov Petr",
+      "group": "1",
+      "avg": "4.25",
+      "debt":  null
+    }
+)"));
+    ASSERT_EQ(S3.getName(), "Ivanov Petr");
+    ASSERT_EQ(std::any_cast<json>(S3.getGroup()).get<std::string>(), "1");
+    ASSERT_TRUE(std::any_cast<json>(S3.getDebt()).is_null());
+    ASSERT_DOUBLE_EQ(S3.getAvg(), 4.25);
 }
 
 TEST(Json_parser, correct_output) {

@@ -83,7 +83,8 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
         } else if ((std::any_cast<json>(J.students[i].getDebt()).is_string())) {
             out << "| " << std::setw(length_of_fields[3] - 2)
                 << std::any_cast<json>(J.students[i].getDebt()).get<std::string>();
-        } else {
+        }
+        if ((std::any_cast<json>(J.students[i].getDebt()) == nullptr)) {
             out << std::setw(length_of_fields[3]) << "| null";
         }
         out << "|";
