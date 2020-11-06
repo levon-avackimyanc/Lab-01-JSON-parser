@@ -67,12 +67,17 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
                 << std::any_cast<json>((J.students[i].getGroup())).get<int>();
         } else {
             out << "| " << std::setw(length_of_fields[1] - 2)
-                << std::any_cast<json>((J.students[i].getGroup())).get<std::string>();
+                << std::any_cast<json>((J.students[i].
+                getGroup())).get<std::string>();
         }
-        out << "| " << std::setw(length_of_fields[2] - 2) << J.students[i].getAvg();
+        out << "| " << std::setw(length_of_fields[2] - 2)
+        << J.students[i].getAvg();
         if ((std::any_cast<json>(J.students[i].getDebt()).is_array())) {
-            if ((std::any_cast<json>(J.students[i].getDebt()).size()) > 1) {
-                out << "| " << std::any_cast<json>(J.students[i].getDebt()).size() << std::setw(length_of_fields[3] - 3)
+            if ((std::any_cast<json>(J.students[i].
+            getDebt()).size()) > 1) {
+                out << "| " << std::any_cast<json>(J.students[i].
+                getDebt()).size()
+                    << std::setw(length_of_fields[3] - 3)
                     << " items";
             } else {
                 std::vector<std::string> d =
@@ -80,9 +85,11 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
                                 .get<std::vector<std::string>>();
                 out << "| " << std::setw(length_of_fields[3] - 2) << d[0];
             }
-        } else if ((std::any_cast<json>(J.students[i].getDebt()).is_string())) {
+        } else if ((std::any_cast<json>(J.students[i].
+        getDebt()).is_string())) {
             out << "| " << std::setw(length_of_fields[3] - 2)
-                << std::any_cast<json>(J.students[i].getDebt()).get<std::string>();
+                << std::any_cast<json>(J.students[i].
+                getDebt()).get<std::string>();
         }
         if ((std::any_cast<json>(J.students[i].getDebt()) == nullptr)) {
             out << std::setw(length_of_fields[3]) << "| null";
