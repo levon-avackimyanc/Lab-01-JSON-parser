@@ -50,7 +50,6 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
 
     length_of_fields[0] = size + 3;
 
-<<<<<<< HEAD
     out << std::left;
     for (size_t i = 0; i < 4; ++i) {
         out << std::setw(length_of_fields[i]) << "| " + columns[i];
@@ -58,7 +57,6 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
     out << "|" << std::endl;
     for (size_t i = 0; i < 4; ++i) {
         out << std::setfill('-') << std::setw(length_of_fields[i]) << '|';
-=======
   out << std::left;
   for (size_t i = 0; i < 4; ++i) {
     out << std::setw(length_of_fields[i]) << "| " + columns[i];
@@ -100,7 +98,6 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
           << std::any_cast<json>(J.students[i].getDebt()).get<std::string>();
     } else {
       out << std::setw(length_of_fields[3]) << "| null";
->>>>>>> 713210c49744b1b3cd5a855149c5e2d9edf330b4
     }
     out << std::setfill(' ') << '|' << std::endl;
     for (size_t i = 0; i < J.students.size(); ++i) {
