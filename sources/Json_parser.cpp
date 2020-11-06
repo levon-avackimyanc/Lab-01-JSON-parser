@@ -50,7 +50,6 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
 
     length_of_fields[0] = size + 3;
 
-<<<<<<< HEAD
     out << std::left;
     for (size_t i = 0; i < 4; ++i) {
         out << std::setw(length_of_fields[i]) << "| " + columns[i];
@@ -58,49 +57,6 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
     out << "|" << std::endl;
     for (size_t i = 0; i < 4; ++i) {
         out << std::setfill('-') << std::setw(length_of_fields[i]) << '|';
-=======
-  out << std::left;
-  for (size_t i = 0; i < 4; ++i) {
-    out << std::setw(length_of_fields[i]) << "| " + columns[i];
-  }
-  out << "|" << std::endl;
-  for (size_t i = 0; i < 4; ++i) {
-    out << std::setfill('-') << std::setw(length_of_fields[i]) << '|';
-  }
-  /*size_t Size = 0;
-  for (auto i : J.students) {
-    if (i.getName().length() > Size) {
-      Size = i.getName().length();
-    }
-  }*/
-  out << std::setfill(' ') << '|' << std::endl;
-  for (size_t i = 0; i < J.students.size(); ++i) {
-    out << std::left << std::setw(length_of_fields[0])
-        << "| " + J.students[i].getName();
-    if ((std::any_cast<json>(J.students[i].getGroup())).is_number()) {
-      out << "| " << std::setw(length_of_fields[1] - 2)
-          << std::any_cast<json>((J.students[i].getGroup())).get<int>();
-    } else {
-      out << "| " << std::setw(length_of_fields[1] - 2)
-          << std::any_cast<json>((J.students[i].getGroup())).get<std::string>();
-    }
-    out << "| " << std::setw(length_of_fields[2] - 2) << J.students[i].getAvg();
-    if ((std::any_cast<json>(J.students[i].getDebt()).is_array())) {
-      if ((std::any_cast<json>(J.students[i].getDebt()).size()) > 1) {
-        out << "| " << std::any_cast<json>(J.students[i].getDebt()).size()
-            << std::setw(length_of_fields[3] - 3) << " items";
-      } else {
-        std::vector<std::string> d =
-            std::any_cast<json>(J.students[i].getDebt())
-                .get<std::vector<std::string>>();
-        out << "| " << std::setw(length_of_fields[3] - 2) << d[0];
-      }
-    } else if ((std::any_cast<json>(J.students[i].getDebt()).is_string())) {
-      out << "| " << std::setw(length_of_fields[3] - 2)
-          << std::any_cast<json>(J.students[i].getDebt()).get<std::string>();
-    } else {
-      out << std::setw(length_of_fields[3]) << "| null";
->>>>>>> 713210c49744b1b3cd5a855149c5e2d9edf330b4
     }
     out << std::setfill(' ') << '|' << std::endl;
     for (size_t i = 0; i < J.students.size(); ++i) {
@@ -116,8 +72,8 @@ std::ostream &operator<<(std::ostream &out, const Json_parser &J) {
         out << "| " << std::setw(length_of_fields[2] - 2) << J.students[i].getAvg();
         if ((std::any_cast<json>(J.students[i].getDebt()).is_array())) {
             if ((std::any_cast<json>(J.students[i].getDebt()).size()) > 1) {
-                out << "| " << std::any_cast<json>(J.students[i].getDebt()).size()
-                    << std::setw(length_of_fields[3] - 3) << " items";
+                out << "| " << std::any_cast<json>(J.students[i].getDebt()).size() << std::setw(length_of_fields[3] - 3)
+                    << " items";
             } else {
                 std::vector<std::string> d =
                         std::any_cast<json>(J.students[i].getDebt())
